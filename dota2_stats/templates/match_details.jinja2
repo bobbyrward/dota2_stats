@@ -1,0 +1,110 @@
+{% extends "base.jinja2" %}
+{% block body_tag %}id="match-details"{% endblock %}
+{% block nav_item_matches %}class="active"{% endblock %}
+{% block content %}
+<div class="page-header">
+    <h1>Match {{match.id}}</h1>
+</div>
+
+{% if match.radiant_win %}
+<h2>Radiant Victory</h2>
+{% else %}
+<h2>Dire Victory</h2>
+{% endif %}
+
+<h3>Radiant</h3>
+<table class="table table-hover">
+  <tr>
+	<th>Player</th>
+	<th>Hero</th>
+	<th>Level</th>
+	<th>K</th>
+	<th>D</th>
+	<th>A</th>
+	<th>Gold</th>
+	<th>LH</th>
+	<th>D</th>
+	<th>XPM</th>
+	<th>GPM</th>
+	<th>Items</th>
+  </tr>
+
+  {% for pm in match.radiant_players %}
+  <tr>
+	<td>
+	  {% if pm.player.is_anonymous %}
+	  Anonymous
+	  {% else %}
+	  <a href="{{pm.player.url}}">{{pm.player.display_name}}</a>
+	  {% endif %}
+	</td>
+	<td><img src="{{pm.hero.full_image_url}}" />{{pm.hero.proper_name}}</td>
+	<td>{{pm.level}}</td>
+	<td>{{pm.kills}}</td>
+	<td>{{pm.deaths}}</td>
+	<td>{{pm.assists}}</td>
+	<td>{{pm.gold}}</td>
+	<td>{{pm.last_hits}}</td>
+	<td>{{pm.denies}}</td>
+	<td>{{pm.xp_per_min}}</td>
+	<td>{{pm.gold_per_min}}</td>
+	<td>
+	  {% for item in pm.items %}
+		{% if item %}
+		  <a class="item-thumb" href="{{item.url}}" style="background-image: url({{item.thumbnail_image_url}})">{{item.name}}</a>
+		{% endif %}
+	  {% endfor %}
+	</td>
+  </tr>
+  {% endfor %}
+
+</table>
+
+<h3>Dire</h3>
+<table class="table table-hover table-bordered">
+  <tr>
+	<th>Player</th>
+	<th>Hero</th>
+	<th>Level</th>
+	<th>K</th>
+	<th>D</th>
+	<th>A</th>
+	<th>Gold</th>
+	<th>LH</th>
+	<th>D</th>
+	<th>XPM</th>
+	<th>GPM</th>
+	<th>Items</th>
+  </tr>
+
+  {% for pm in match.dire_players %}
+  <tr>
+	<td>
+	  {% if pm.player.is_anonymous %}
+	  Anonymous
+	  {% else %}
+	  <a href="{{pm.player.url}}">{{pm.player.display_name}}</a>
+	  {% endif %}
+	</td>
+	<td><img src="{{pm.hero.full_image_url}}" />{{pm.hero.proper_name}}</td>
+	<td>{{pm.level}}</td>
+	<td>{{pm.kills}}</td>
+	<td>{{pm.deaths}}</td>
+	<td>{{pm.assists}}</td>
+	<td>{{pm.gold}}</td>
+	<td>{{pm.last_hits}}</td>
+	<td>{{pm.denies}}</td>
+	<td>{{pm.xp_per_min}}</td>
+	<td>{{pm.gold_per_min}}</td>
+	<td>
+	  {% for item in pm.items %}
+		{% if item %}
+		  <a class="item-thumb" href="{{item.url}}" style="background-image: url({{item.thumbnail_image_url}})">{{item.name}}</a>
+		{% endif %}
+	  {% endfor %}
+	</td>
+  </tr>
+  {% endfor %}
+
+</table>
+{% endblock %}

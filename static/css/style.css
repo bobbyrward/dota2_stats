@@ -1,0 +1,91 @@
+body {
+  padding-top: 40px;
+}
+
+body#hero-detail {
+  padding-top: 80px;
+}
+
+#all-heroes .hero_entry {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 71px;
+  height: 94px;
+  margin-bottom: 3em;
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#all-heroes .hero_txt {
+  margin: 0 auto;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  color: black;
+  text-shadow: 0 0 12px #000;
+  top: 94px;
+  width: 71px;
+  left: 0;
+  height: 3em;
+  line-height: 1.2em;
+}
+
+#all-items .item_entry {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 87px;
+  height: 64px;
+  margin-bottom: 3em;
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#all-items .item_txt {
+  margin: 0 auto;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  color: black;
+  text-shadow: 0 0 12px #000;
+  top: 64px;
+  width: 71px;
+  left: 0;
+  height: 3em;
+  line-height: 1.2em;
+}
+
+#recent-matches .hero_thumb {
+  width: 50px
+}
+
+#hero-detail .hero-image {
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+#hero-detail .name-row {
+  height: 146px;
+  position: relative;
+}
+
+#hero-detail h1 {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+}
+
+#match-details .item-thumb {
+  width: 44px;
+  height: 32px;
+  border: 1px solid white;
+  border-radius: 5px;
+  display: inline-block;
+  text-indent: -9999px;
+
+}

@@ -1,0 +1,23 @@
+{% extends "base.jinja2" %}
+
+{% block head %}{% endblock %}
+
+{% block body_tag %}id="all-heroes"{% endblock %}
+{% block nav_item_heroes %}class="active"{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>Heroes</h1>
+</div>
+{% for row in heroes|batch(12) %}
+<div class="row">
+  {% for hero in row %}
+  <div class="span1">
+	<a class="hero_entry" href="{{hero.url}}" style="background-image: url({{hero.vertical_image_url}})" >
+	  <span class="hero_txt">{{hero.proper_name}}</span>
+	</a>
+  </div>
+  {% endfor %}
+</div>
+{% endfor %}
+{% endblock %}

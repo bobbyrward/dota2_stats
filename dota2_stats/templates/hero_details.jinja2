@@ -1,0 +1,26 @@
+{% extends "base.jinja2" %}
+
+{% block head %}{% endblock %}
+
+{% block body_tag %}id="hero-detail"{% endblock %}
+{% block nav_item_heroes %}class="active"{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="span4">
+    <img class="hero-image" src="{{hero.large_image_url}}" />
+  </div>
+  <div class="span8 name-row">
+    <h1 class="hero-name">{{hero.proper_name}}</h1>
+  </div>
+</div>
+<div class="row inverse">
+  <div class="span12 section-title">
+    <h2>Recent Matches</h2>
+  </div>
+</div>
+<div class="row">
+</div>
+
+{% endblock %}
+

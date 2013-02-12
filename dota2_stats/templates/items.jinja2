@@ -1,0 +1,21 @@
+{% extends "base.jinja2" %}
+
+{% block body_tag %}id="all-items"{% endblock %}
+{% block nav_item_items %}class="active"{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>Items</h1>
+</div>
+{% for row in items|batch(6) %}
+<div class="row">
+  {% for item in row %}
+  <div class="span2">
+    <a class="item_entry" href="{{item.url}}" style="background-image: url({{item.full_image_url}})" >
+      <span class="item_txt">{{item.name}}</span>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+{% endfor %}
+{% endblock %}

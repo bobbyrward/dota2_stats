@@ -1,0 +1,40 @@
+{% extends "base.jinja2" %}
+{% block head %}
+{% endblock %}
+{% block body_tag %}id="recent-matches"{% endblock %}
+{% block nav_item_matches %}class="active"{% endblock %}
+{% block content %}
+<div class="page-header">
+  <h1>Recent Matches</h1>
+</div>
+<table class="table table-hover table-bordered">
+{% for match in matches %}
+  <tr>
+	<td><a href="{{match.url}}">{{match.id}}</a></td>
+	<td>{{match.lobby_type}}</td>
+	<td>
+	  {% if match.radiant_win %}
+	  Radiant Victory
+	  {% else %}
+	  Dire Victory
+	  {% endif %}
+	</td>
+	<td>{{match.duration_string}}</td>
+	<td>
+	  {% for pm in match.radiant_players %}
+		<a href="{{pm.hero.url}}">
+		<img class="hero_thumb" src="{{pm.hero.thumbnail_image_url}}" />
+		</a>
+	  {% endfor %}
+	</td>
+	<td>
+	  {% for pm in match.dire_players %}
+		<a href="{{pm.hero.url}}">
+		  <img class="hero_thumb" src="{{pm.hero.thumbnail_image_url}}" />
+		</a>
+	  {% endfor %}
+	</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
