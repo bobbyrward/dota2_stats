@@ -44,7 +44,7 @@ def get_player_match_history(settings, steam_id):
 
 
     response = requests.get('https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001/',
-            params=)
+            params=params)
 
     response.raise_for_status()
 
