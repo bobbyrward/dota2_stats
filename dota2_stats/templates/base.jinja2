@@ -19,13 +19,12 @@
 			  <li {% block nav_item_trends %}{% endblock %}> <a href="/trends">Trends</a> </li>
 			</ul>
 		  </div>
-		  <form class="navbar-search pull-right" action="/search">
-			<input type="text" class="search-query" placeholder="Search..." />
-		  </form>
 		  {% if 'current_player_steamid' in request.session %}
-		  <p class="navbar-text pull-right">
-			  {{request.session['current_player_steamid']}}
-		  </p>
+          
+          {% else %}
+          <a id="steam-signin" href="/login">
+            <img src="/static/img/steam/sits_small.png" />
+          </a>
 		  {% endif %}
 		</div>
 	  </div>
