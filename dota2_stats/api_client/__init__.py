@@ -36,6 +36,21 @@ def get_player_details(settings, player_id_32bit):
     return get_player_list_details(settings, [player_id_32bit])
 
 
+def get_player_match_history(settings, steam_id):
+    params = {
+        'key': settings['steam.api_key'],
+        'account_id': steam_id
+    }
+
+
+    response = requests.get('https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001/',
+            params=)
+
+    response.raise_for_status()
+
+    return json.loads(response.content)['result']
+
+
 def get_match_history(settings):
     response = requests.get('https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001/',
             params={'key': settings['steam.api_key']})

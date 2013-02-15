@@ -9,10 +9,9 @@
 	<div class="navbar navbar-inverse navbar-fixed-top">
 	  <div class="navbar-inner">
 		<div class="container">
-		  <a class="brand" href="#">DotA 2 Stats</a>
+		  <a class="brand" href="/">DotA 2 Stats</a>
 		  <div class="nav-collapse collapse">
 			<ul class="nav nav-pills">
-			  <li {% block nav_item_home %}{% endblock %}> <a href="/">Home</a> </li>
 			  <li {% block nav_item_heroes %}{% endblock %}> <a href="/heroes">Heroes</a> </li>
 			  <li {% block nav_item_items %}{% endblock %}> <a href="/items">Items</a> </li>
 			  <li {% block nav_item_matches %}{% endblock %}> <a href="/matches">Matches</a> </li>
@@ -23,6 +22,11 @@
 		  <form class="navbar-search pull-right" action="/search">
 			<input type="text" class="search-query" placeholder="Search..." />
 		  </form>
+		  {% if 'current_player_steamid' in request.session %}
+		  <p class="navbar-text pull-right">
+			  {{request.session['current_player_steamid']}}
+		  </p>
+		  {% endif %}
 		</div>
 	  </div>
 	</div>

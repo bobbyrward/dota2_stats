@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from sqlalchemy import BigInteger
 from sqlalchemy import Boolean
 from sqlalchemy import Column
@@ -114,6 +116,8 @@ class Player(Base):
     id = Column(BigInteger, primary_key=True)
     display_name = Column(String(250), nullable=True)
     profile_update_error = Column(Boolean, default=False)
+    is_registerd = Column(Boolean, default=False)
+    last_updated = Column(DateTime(timezone=True), nullable=True)
 
     @property
     def is_anonymous(self):

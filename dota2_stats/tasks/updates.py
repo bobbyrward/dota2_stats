@@ -20,6 +20,11 @@ log = logging.getLogger(__name__)
 
 
 @celery.task()
+def update_players_matches():
+    pass
+
+
+@celery.task()
 def update_recent_matches():
     result = api_client.get_match_history(celery.settings)
 

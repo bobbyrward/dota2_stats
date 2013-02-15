@@ -6,8 +6,9 @@ from dota2_stats.views.matches import recent_matches
 from dota2_stats.views.matches import match_details
 from dota2_stats.views.auth import on_login_success
 from dota2_stats.views.auth import on_login_failure
+from dota2_stats.views.common import template_params
 
 
 @view_config(route_name='index', renderer='templates/index.jinja2')
 def index(request):
-    return {'settings': request.registry.settings}
+    return template_params(request)

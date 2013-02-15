@@ -22,14 +22,14 @@
 	<td>{{match.duration_string}}</td>
 	<td>
 	  {% for pm in match.radiant_players %}
-		<a href="{{pm.hero.url}}">
+		<a href="{{pm.hero.url}}" title="{{pm.hero.proper_name}}">
 		<img class="hero_thumb" src="{{pm.hero.thumbnail_image_url}}" />
 		</a>
 	  {% endfor %}
 	</td>
 	<td>
 	  {% for pm in match.dire_players %}
-		<a href="{{pm.hero.url}}">
+		<a href="{{pm.hero.url}}" title="{{pm.hero.proper_name}}">
 		  <img class="hero_thumb" src="{{pm.hero.thumbnail_image_url}}" />
 		</a>
 	  {% endfor %}
