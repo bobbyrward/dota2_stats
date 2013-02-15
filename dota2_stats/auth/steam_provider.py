@@ -25,11 +25,11 @@ def register_steam_provider(config):
         None,
     )
 
-    config.add_route(provider.login_route, '/login/steam/')
+    config.add_route(provider.login_route, '/login')
     config.add_view(provider, attr='login', route_name=provider.login_route,
                     permission=NO_PERMISSION_REQUIRED)
 
-    config.add_route(provider.callback_route, '/login/steam/callback/',
+    config.add_route(provider.callback_route, '/login/callback/',
                      use_global_views=True,
                      factory=provider.callback)
 
