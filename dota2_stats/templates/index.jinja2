@@ -1,1 +1,35 @@
 {% extends "base.jinja2" %}
+
+{% block body_tag %}id="index"{% endblock %}
+
+{% block content %}
+<div class="hero-unit">
+  {% if 'current_player_steamid' in request.session %}
+  
+  {% else %}
+  <h1>Welcome to MyDotA2Stats</h1>
+  <p>
+    Login through steam to get started on tracking your in-depth personal stats.
+  </p>
+  <p>
+    <a href="/login">
+      <img src="/static/img/steam/sits_large_noborder.png" />
+    </a>
+  </p>
+  <p>
+  	{{request.session}}
+  </p>
+  {% endif %}
+</div>
+<div class="row">
+  <div class="span4">
+  	{{ lipsum(n=3) }}
+  </div>
+  <div class="span4">
+  	{{ lipsum(n=3) }}
+  </div>
+  <div class="span4">
+  	{{ lipsum(n=3) }}
+  </div>
+</div>
+{% endblock %}

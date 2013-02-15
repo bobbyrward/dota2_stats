@@ -2,8 +2,14 @@ body {
   padding-top: 40px;
 }
 
-body#hero-detail {
+body#hero-detail, body#index {
   padding-top: 80px;
+}
+
+#steam-signin {
+display: block;
+float: right;
+margin: 10px -20px 10px 20px;
 }
 
 #all-heroes .hero_entry {
